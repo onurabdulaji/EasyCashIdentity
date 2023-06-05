@@ -1,5 +1,6 @@
 using EasyCashIdentity.DataAccessLayer.Concrete;
 using EasyCashIdentity.EntityLayer.Concrete;
+using EasyCashIdentity.PresentationLayer.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 // Added By Onur
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
 var app = builder.Build();
 

@@ -30,14 +30,32 @@ namespace EasyCashIdentity.PresentationLayer.Controllers
                     Name = appUserRegisterDto.Name,
                     Surname = appUserRegisterDto.Surname,
                     Email = appUserRegisterDto.Email,
+                    City = "Istanbul",
+                    District = "Istanbul",
+                    ImageUrl = "Profile",
                 };
                 var result = await _userManager.CreateAsync(appUser,appUserRegisterDto.Password);
                 if (result.Succeeded) 
                 {
                     return RedirectToAction("Index" , "ConfirmMail");
                 }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
             }
             return View();
         }
     }
 }
+
+// Password Format
+// 6 Karakter
+// 1 Kucuk Harf
+// 1 Buyuk Harf
+// 1 Sembol
+// 1 Sayi
+// Password Format
