@@ -1,7 +1,13 @@
+using EasyCashIdentity.DataAccessLayer.Concrete;
+using EasyCashIdentity.EntityLayer.Concrete;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// Added By Onur
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
 
 var app = builder.Build();
 
@@ -17,7 +23,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+// For Login
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
