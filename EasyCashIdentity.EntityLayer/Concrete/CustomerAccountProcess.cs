@@ -14,3 +14,12 @@ namespace EasyCashIdentity.EntityLayer.Concrete
         public DateTime ProcessDate { get; set; }
     }
 }
+
+/*
+ID
+Islem Turu
+Miktar
+Tarih
+Alici
+Gonderici
+ */
