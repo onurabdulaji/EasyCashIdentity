@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace EasyCashIdentity.DataAccessLayer.Concrete
 {
     // Identity Context
-    public class Context : IdentityDbContext
+    public class Context : IdentityDbContext<AppUser, AppRole, int> // overload Context
     {
         // SQL Connection
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
