@@ -1,6 +1,45 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
-<h2>Burasi My Profile Sayfasidir</h2>
+<!DOCTYPE html>
+<html lang="en">
+@*HeaderPartial*@
+@await Component.InvokeAsync("_CustomerLayoutHeaderPartial")
+
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            @*SidebarPartial*@
+            @await Component.InvokeAsync("_CustomerLayoutSiderbarPartial")
+
+
+            @*Top Nav*@
+            @await Component.InvokeAsync("_CustomerLayoutNavbarPartial")
+
+
+            <!-- page content -->
+
+
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Fixed Sidebar <small> Just add class <strong>menu_fixed</strong></small></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+          
+            @*Footer*@
+            @await Component.InvokeAsync("_CustomerLayoutFooterPartial")
+        </div>
+    </div>
+
+    @*ScriptPartial*@
+    @await Component.InvokeAsync("_CustomerLayoutScriptPartial")
+
+</body>
+</html>
