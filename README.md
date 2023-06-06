@@ -1,7 +1,7 @@
 # EasyCashIdentity
 
 * .Net Core 6
-* N Tier Arhitecture
+* N Tier Architecture
 * Microsoft Identity
 * Entity Framework Core
 * MSSQL
