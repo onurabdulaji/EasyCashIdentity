@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ConfirmMailViewModel
+
+@{
     Layout = null;
 }
 <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -12,10 +14,10 @@
         <h2>Tasinan Mail Adresi : @ViewBag.v</h2>
         <br />
         <label>Kullanici ID Degeri</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" asp-for="Mail" value="@ViewBag.v">
         <br />
         <label>Mail Adresinize Gelen 6 Haneli Kodu Giriniz</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" asp-for="ConfirmCode">
         <br />
         <button class="btn btn-primary">Hesabi Aktiflestir</button>
     </form>
