@@ -56,7 +56,7 @@ namespace EasyCashIdentity.PresentationLayer.Controllers
                     // Mail Transfer Protocol
                     SmtpClient client = new SmtpClient();
                     client.Connect("smtp.gmail.com", 587 , false);
-                    client.Authenticate("onurabdulaji@gmail.com", ""); // Gmail Code Removed + Gmail
+                    client.Authenticate("onurabdulaji@gmail.com", "sphyvvczjktdwbfx"); // Gmail Code Removed + Gmail
                     client.Send(mimeMessage);
                     client.Disconnect(true);
 
