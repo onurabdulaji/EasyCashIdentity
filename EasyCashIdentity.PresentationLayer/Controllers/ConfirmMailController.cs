@@ -28,11 +28,16 @@ namespace EasyCashIdentity.PresentationLayer.Controllers
             var user = await _userManager.FindByEmailAsync(confirmMailViewModel.Mail);
             if (user.ConfirmCode == confirmMailViewModel.ConfirmCode)
             {
+                user.EmailConfirmed = true;
+                await _userManager.UpdateAsync(user); // Update
                 return RedirectToAction("Index" , "MyProfile");
             }
             return View();
         }
     }
 }
+
+
+
 
 // kullanici adi = sifre eslesmedi <-> email confirmed olmadi
