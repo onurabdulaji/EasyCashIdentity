@@ -2,7 +2,7 @@
 
 namespace EasyCashIdentity.PresentationLayer.ViewComponents.Customer
 {
-    public class _CustomerLayoutSiderbarPartial : ViewComponent
+    public class _CustomerLayoutSidebarPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {
