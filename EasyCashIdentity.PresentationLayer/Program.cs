@@ -1,4 +1,8 @@
+using EasyCashIdentity.BusinessLayer.Abstract;
+using EasyCashIdentity.BusinessLayer.Concrete;
+using EasyCashIdentity.DataAccessLayer.Abstract;
 using EasyCashIdentity.DataAccessLayer.Concrete;
+using EasyCashIdentity.DataAccessLayer.EntityFramework;
 using EasyCashIdentity.EntityLayer.Concrete;
 using EasyCashIdentity.PresentationLayer.Models;
 
@@ -9,6 +13,12 @@ builder.Services.AddControllersWithViews();
 // Added By Onur
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
+
+builder.Services.AddScoped<ICustomerAccountProcessDal, EfCustomerAccountProcessDal>();
+
+builder.Services.AddScoped<ICustomerAccountProcessService, CustomerAccountProcessManager>();
+
+
 
 var app = builder.Build();
 
