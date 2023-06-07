@@ -36,8 +36,8 @@ namespace EasyCashIdentity.PresentationLayer.Controllers
             sendMoneyForCustomerAccountProcessDto.ProcessType = "Havale";
             sendMoneyForCustomerAccountProcessDto.RecieverID = recieverAccountNumberID;
 
-            // AutoMapper 1
-            // Dto Layer 2
+            // AutoMapper 1 2 way
+            // Dto Layer 2 1 way
             //_customerAccountProcessService.TInsert()
             
             return RedirectToAction("Index" , "Deneme");
